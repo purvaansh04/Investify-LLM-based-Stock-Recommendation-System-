@@ -1,0 +1,15 @@
+[Unit]
+Description=Ollama Serve Service
+After=network.target
+
+[Service]
+Type=simple
+User=<your-username>
+# Optionally, set the working directory if needed:
+# WorkingDirectory=/home/<your-username>
+ExecStart=/usr/local/bin/start_ollama.sh
+Restart=on-failure
+Environment="HOME=/home/<addusername>"
+
+[Install]
+WantedBy=multi-user.target
